@@ -3,28 +3,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function calculateAge() {
-    console.log("calculateAge function called!"); // Debugging
+    // console.log("calculateAge function called!");
 
     const day = document.getElementById("day").value;
     const month = document.getElementById("month").value;
     const year = document.getElementById("year").value;
     const result = document.querySelector(".result");
 
-    console.log(`Inputs: Day=${day}, Month=${month}, Year=${year}`); // Debugging
+    // console.log(`Inputs: Day=${day}, Month=${month}, Year=${year}`); 
 
-    // Input validation: Check if fields are empty
     if (!day || !month || !year) {
-        result.innerHTML = "Please enter a valid date";
+        result.innerHTML = "Please enter a valid date!";
         return;
     }
 
     const birthdate = new Date(year, month - 1, day);
     const today = new Date();
 
-    // Check if the date is valid and not in the future
     if (birthdate > today || isNaN(birthdate.getTime())) {
-        console.log("Invalid birthdate detected!"); // Debugging
-        result.innerHTML = "Please enter a valid date";
+        console.log("Invalid birthdate detected!"); 
+        result.innerHTML = "Please enter a valid date!";
         return;
     }
 
@@ -36,6 +34,6 @@ function calculateAge() {
         ageValue--;
     }
 
-    console.log(`Calculated age: ${ageValue}`); // Debugging
-    result.innerHTML = `You are ${ageValue} years old`;
+    // console.log(`Calculated age: ${ageValue}`); 
+    result.innerHTML = `You are <strong>${ageValue}</strong> years old!`;
 }
